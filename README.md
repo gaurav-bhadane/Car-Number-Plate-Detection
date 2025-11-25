@@ -1,48 +1,114 @@
-# Car Number Plate Detection
+# 🚗 AI-Based Car Number Plate Detection & Intelligent Monitoring System
 
-## Overview
+An end-to-end AI-powered system that detects vehicle number plates from images/video using deep learning, extracts text using OCR, and uses intelligent agents for violation monitoring and automated alerts.  
+Built for **traffic surveillance**, **parking automation**, **toll systems**, and **law enforcement applications**.
 
-The Car Number Plate Detection project is designed to detect and recognize vehicle license plates from images and videos. This project uses deep learning techniques to identify and extract number plates from vehicles, making it useful for applications like automated parking systems, traffic monitoring, and vehicle registration.
+---
 
-## Features
+## ✨ Features
 
-- **Number Plate Detection:** Detects number plates from images and videos using a trained deep learning model.
-- **Number Plate Recognition:** Extracts and reads the alphanumeric characters from the detected number plates.
-- **Real-Time Processing:** Processes video feeds in real-time for live applications.
-- **Support for Multiple Plate Formats:** Recognizes various formats of number plates.
+### 🔍 1. Number Plate Detection
+- Detects number plates in images or real-time video.
+- Uses deep learning (YOLO / Haar Cascade / SSD / Faster-RCNN).
+- Supports Indian and international plates.
 
-## Installation
+### 🔠 2. OCR – Number Plate Recognition
+- Extracts alphanumeric characters from detected plates.
+- Works in multiple lighting & environmental conditions.
 
-To set up the Car Number Plate Detection project, follow these steps:
+### 🎥 3. Real-Time Video Processing
+- Compatible with webcams, CCTV feeds, and IP cameras.
+- Optimized for low latency and high FPS.
 
-1. **Clone the Repository:**
-   `git clone https://github.com/gaurav-bhadane/Car-Number-Plate-Detection.git`
+### 🤖 4. Intelligent Violation Monitoring Agent
+Automatically detects:
+- Overspeeding  
+- Red-light jump  
+- Wrong parking  
+- Lane violations  
 
-2. **Navigate to the Project Directory:**
-   `cd Car-Number-Plate-Detection`
+For each violation:
+- Captures plate image  
+- Logs time, location, violation type  
+- Sends real-time alerts to owner + authorities  
+- Generates structured logs/reports  
 
-3. **Create and Activate a Virtual Environment:**
-   `python -m venv venv`
-   `source venv/bin/activate `
+### 📩 5. Automated Follow-Up System
+If fines remain unpaid:
+- Sends automated email/SMS reminders  
+- Escalates alerts to control room  
+- Maintains violation + reminder logs  
 
-4. **Install the Required Dependencies:**
-   `pip install -r requirements.txt`
+---
 
-## Model Training
+## 🧠 How the System Works
 
-To train a custom model, follow these steps:
+1. Camera captures video  
+2. AI detects number plates  
+3. OCR extracts characters (e.g., **MH12AB1234**)  
+4. Violation agent analyses frame for rules  
+5. Real-time alerts sent  
+6. Automated reminders follow  
+7. All logs stored & tracked  
 
-  1. Prepare your dataset in the specified format.
-  2. Update the training configuration in train.py.
-  3. Run the training script: `python train.py`
+---
 
-## Contributing
-Contributions are welcome! If you have suggestions or improvements, please fork the repository and submit a pull request. For major changes, please open an issue first to discuss what you would like to change.
+## 🏗️ Project Architecture
 
-## Acknowledgments
-  1. OpenCV: For image processing capabilities.
-  2. TensorFlow/Keras: For deep learning frameworks.
-  3. Other Libraries: Refer to requirements.txt for a complete list of dependencies.
+Camera Feed
+      ↓
+Number Plate Detector (YOLO/Haar)
+      ↓
+OCR Recognition (EasyOCR/Tesseract)
+      ↓
+Violation Monitoring Agent
+      ↓
+Notification Service (Email/SMS/Slack)
+      ↓
+Follow-up Automation
+      ↓
+Logs / Reports / Database
 
-Happy coding!
-Let me know if there's anything specific you'd like to add or modify!
+
+
+---
+
+# 🧩 Agent Architecture (New Integration)
+
+| Agent | Responsibility |
+|-------|---------------|
+| **PreprocessingAgent** | Cleans and prepares images |
+| **DetectionAgent** | Detects number plates |
+| **OCRAgent** | Extracts text from plate |
+| **FileManagerAgent** | Saves plates, logs data |
+| **NotificationAgent** | Console, Email, Slack alerts |
+| **ErrorHandlingAgent** | Logs errors + sends alerts |
+| **OrchestratorAgent** | Controls full workflow |
+
+---
+
+---
+
+## 🔧 Tech Stack
+
+### **Computer Vision & AI**
+- OpenCV  
+- YOLO / SSD / Haar Cascade  
+- EasyOCR / Tesseract  
+
+### **Backend & Agents**
+- Python  
+- Autogen / LangGraph  
+- FastAPI / Flask (optional)
+
+### **Notifications**
+- SMTP Email  
+- Slack Webhooks  
+- Twilio / Firebase SMS  
+
+### **Storage**
+- MongoDB  
+- PostgreSQL  
+- Local storage for plate images  
+
+---
